@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+                             https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0">
+
+    <!-- Login Servlet -->
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.lms.servlets.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- Create Course Servlet -->
+    <servlet>
+        <servlet-name>CreateCourseServlet</servlet-name>
+        <servlet-class>com.lms.servlets.CreateCourseServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CreateCourseServlet</servlet-name>
+        <url-pattern>/CreateCourseServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- Approve Course Servlet -->
+    <servlet>
+        <servlet-name>ApproveCourseServlet</servlet-name>
+        <servlet-class>com.lms.servlets.ApproveCourseServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ApproveCourseServlet</servlet-name>
+        <url-pattern>/ApproveCourseServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- Enroll Course Servlet -->
+    <servlet>
+        <servlet-name>EnrollCourseServlet</servlet-name>
+        <servlet-class>com.lms.servlets.EnrollCourseServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EnrollCourseServlet</servlet-name>
+        <url-pattern>/EnrollCourseServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- Courses Servlet -->
+    <servlet>
+        <servlet-name>CoursesServlet</servlet-name>
+        <servlet-class>com.lms.servlets.CoursesServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CoursesServlet</servlet-name>
+        <url-pattern>/courses</url-pattern>
+    </servlet-mapping>
+
+    <!-- Welcome file -->
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>

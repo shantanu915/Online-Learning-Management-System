@@ -1,0 +1,168 @@
+/* src/main/webapp/css/styles.css */
+
+/* Global */
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f6fb;
+    margin: 0;
+}
+
+/* Main title (used on login/createCourse pages) */
+.site-header {
+    text-align: center;
+    padding: 20px 0 5px;
+}
+
+.site-header h1 {
+    margin: 0;
+    font-size: 26px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #1e3a8a;
+}
+
+/* Centered card pages (login, createCourse) */
+.page-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 80px); /* leave space for header */
+}
+
+.card {
+    background: #ffffff;
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    width: 360px;
+}
+
+.card h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+.form-row {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-size: 14px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"] {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus {
+    outline: none;
+    border-color: #1e88e5;
+    box-shadow: 0 0 0 2px rgba(30,136,229,0.2);
+}
+
+/* Primary button (Login / Create Course) */
+.btn-primary {
+    width: 100%;
+    padding: 9px 0;
+    border: none;
+    border-radius: 4px;
+    background-color: #1e88e5;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #1565c0;
+}
+
+/* Error / info messages */
+.error-msg {
+    margin-top: 10px;
+    color: #e53935;
+    font-size: 13px;
+    text-align: center;
+}
+
+/* ---------- Courses page styles ---------- */
+
+/* Wrapper card for courses table */
+.table-wrapper {
+    max-width: 900px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 25px 30px;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* Courses title */
+.table-wrapper h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #1e3a8a;
+    font-weight: 600;
+}
+
+/* Table base */
+.table-courses {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+/* Header cells */
+.table-courses th {
+    background-color: #f1f5f9;
+    font-weight: 600;
+    color: #374151;
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+/* Body cells */
+.table-courses td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+/* Zebra rows + hover */
+.table-courses tr:nth-child(even) td {
+    background-color: #f9fbff;
+}
+
+.table-courses tr:hover td {
+    background-color: #e5f0ff;
+}
+
+/* Secondary button (Enroll) */
+.btn-secondary {
+    padding: 5px 12px;
+    border-radius: 4px;
+    border: none;
+    background-color: #10b981;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.btn-secondary:hover {
+    background-color: #059669;
+}
