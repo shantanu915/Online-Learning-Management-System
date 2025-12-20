@@ -166,3 +166,22 @@ input[type="number"]:focus {
 .btn-secondary:hover {
     background-color: #059669;
 }
+.success-message {
+    color: green;         /* text color */
+    font-weight: bold;     /* make bold */
+    font-size: 24px;       /* bigger text */
+    text-align: center;    /* center on page */
+    margin-top: 50px;      /* space from top */
+}
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    padding: 15px;
+    margin: 50px auto;
+    width: 50%;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 20px;
+}
+

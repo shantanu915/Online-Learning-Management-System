@@ -20,6 +20,7 @@ public class CreateCourseServlet extends HttpServlet {
         User user = (User) request.getSession().getAttribute("currentUser");
 
         if (user != null && "instructor".equals(user.getRole())) {
+
             Course course = new Course();
             course.setTitle(title);
             course.setDescription(description);
@@ -29,10 +30,12 @@ public class CreateCourseServlet extends HttpServlet {
             CourseDao courseDao = new CourseDao();
             courseDao.createCourse(course);
 
-            request.setAttribute("message", "Course created and is pending approval.");
-            request.getRequestDispatcher("/courses.jsp").forward(request, response);
+            // ✅ CHANGE 1: redirect to success page (NOT forward)
+            response.sendRedirect(request.getContextPath() + "/courseSuccess.jsp");
+
         } else {
-            response.sendRedirect("/login.jsp");
+            // ✅ CHANGE 2: fix context path (avoid 404)
+            response.sendRedirect(request.getContextPath() + "/createCourse.jsp");
         }
     }
 

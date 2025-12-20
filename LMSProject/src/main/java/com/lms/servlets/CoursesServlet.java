@@ -17,11 +17,11 @@ public class CoursesServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        CourseDao courseDao = new CourseDao();
+       // CourseDao courseDao = new CourseDao();
         // implement this method in CourseDao to fetch only approved courses
-        List<Course> approvedCourses = courseDao.getApprovedCourses();
+       // List<Course> approvedCourses = courseDao.getApprovedCourses();
 
-        request.setAttribute("approvedCourses", approvedCourses);
+       // request.setAttribute("approvedCourses", approvedCourses);
         request.getRequestDispatcher("/courses.jsp").forward(request, response);
     }
 

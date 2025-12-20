@@ -22,10 +22,11 @@ public class EnrollCourseServlet extends HttpServlet {
             EnrollmentDao enrollmentDao = new EnrollmentDao();
             enrollmentDao.enrollStudentInCourse(user.getId(), courseId);
 
-            request.setAttribute("message", "You have enrolled in the course.");
-            request.getRequestDispatcher("/courses.jsp").forward(request, response);
+           // request.setAttribute("message", "You have enrolled in the course.");
+            request.getRequestDispatcher("/enrollsuccessful.jsp").forward(request, response);
         } else {
-            response.sendRedirect("/login.jsp");
+        	response.sendRedirect(request.getContextPath() + "/enrollsuccessful.jsp");
+
         }
     }
 }

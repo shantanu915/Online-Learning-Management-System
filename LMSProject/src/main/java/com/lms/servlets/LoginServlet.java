@@ -2,6 +2,7 @@
 package com.lms.servlets;
 
 import com.lms.dao.UserDao;
+
 import com.lms.model.User;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -12,27 +13,37 @@ import java.io.IOException;
 
 public class LoginServlet extends HttpServlet {
 
+   
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+        String role = request.getParameter("role");
 
         UserDao userDao = new UserDao();
-        User user = userDao.findByUsernameAndPassword(username, password);
+        User user = userDao.findByUsernamePasswordAndRole(username, password, role);
 
         if (user != null) {
             HttpSession session = request.getSession();
             session.setAttribute("currentUser", user);
+            session.setAttribute("role", role);
 
-            // SUCCESS: go to CoursesServlet (not directly to JSP)
-            response.sendRedirect(request.getContextPath() + "/courses");
+            // Redirect based on role
+            if (role.equals("student")) {
+                response.sendRedirect(request.getContextPath() + "/courses");
+            } 
+            else if (role.equals("instructor")) {
+                response.sendRedirect(request.getContextPath() + "/teacherDashboard.jsp");
+            }
+
         } else {
             request.setAttribute("error", "Invalid Username or Password");
             request.getRequestDispatcher("/login.jsp").forward(request, response);
         }
     }
+
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)

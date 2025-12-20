@@ -22,7 +22,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>CreateCourseServlet</servlet-name>
-        <url-pattern>/CreateCourseServlet</url-pattern>
+        <url-pattern>/createCourse</url-pattern>
     </servlet-mapping>
 
     <!-- Approve Course Servlet -->

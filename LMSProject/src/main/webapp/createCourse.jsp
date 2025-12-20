@@ -15,7 +15,8 @@
     <div class="card">
         <h2>Create a New Course</h2>
 
-        <form action="${pageContext.request.contextPath}/CreateCourseServlet" method="post">
+      <form action="${pageContext.request.contextPath}/createCourse" method="post">
+
             <div class="form-row">
                 <label>Title</label>
                 <input type="text" name="title" required>

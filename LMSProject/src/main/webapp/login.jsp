@@ -23,6 +23,13 @@
                 <label>Password</label>
                 <input type="password" name="password" required>
             </div>
+            <div class="form-row">
+               <label>Select Role:</label>
+                 <select name="role" required>
+                 <option value="student">Student</option>
+                 <option value="instructor">instructor</option>
+                 </select>
+            </div>
             <input type="submit" value="Login" class="btn-primary">
         </form>
 
